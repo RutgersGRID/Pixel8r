@@ -1,4 +1,3 @@
-
 /**
  * Getting Started with Capture.
  * 
@@ -8,7 +7,7 @@
 import processing.video.*;
 import peasy.*;
 
- PeasyCam pcam;
+PeasyCam pcam;
 Capture cam;
 boolean record;
 boolean reset = false;
@@ -46,9 +45,11 @@ void setup() {
   // If no device is specified, will just use the default.  
   //cam = new Capture(this, 320, 240);
   //cam = new Capture(this, 320, 240, "Logitech Camera", 30);
-
+  // Microsoft® LifeCam HD-3000
   //FaceTime HD Camera,size=320x180,fps=30
-  cam = new Capture(this, 320, 240, "FaceTime HD Camera", 30);
+  //cam = new Capture(this, 320, 240, "FaceTime HD Camera", 30);
+  cam = new Capture(this, 320, 240, "Microsoft® LifeCam HD-3000", 30);
+
 
   pcam = new PeasyCam(this, width);
   pcam.setMinimumDistance(100);
@@ -166,7 +167,6 @@ void draw() {
     pcam.reset();
     zfactor = 1;
     reset = false;
-    
   }
 } 
 
@@ -210,7 +210,6 @@ void keyPressed() {
     zfactor = 2;
     reset = true;
     println("reset: " + zfactor);
-
   }
   if (key == 'g') {
     //num++;
